@@ -10,13 +10,13 @@
 
 </head>
 
-  
+
 <header id="header_part">
-       
+
     <div class="logo">
         <img src="img/cvru.png" alt="CVRU Logo">
     </div>
-   <div id="menu-toggle">
+    <div id="menu-toggle">
         <div></div>
         <div></div>
         <div></div>
@@ -30,6 +30,18 @@
         <a href="#">Contact Us</a>
     </nav>
 </header>
+
+<div class="main_slide">
+    <div class="cont" id="slider">
+        <div class="slide"><img src="CVRU.jpg" alt="Slide 1"></div>
+        <div class="slide"><img src="1.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="2.jpg" alt="Slide 3"></div>
+
+
+    </div>
+
+
+</div>
 
 <main class="main">
     <div class="container">
@@ -94,6 +106,27 @@
             navbar.classList.toggle('active');
         });
     });
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slider = document.getElementById('slider');
+        slider.style.transform = `translateX(-${index * 100}vw)`;
+    }
+
+    function nextSlide() {
+        const slides = document.querySelectorAll('.slide');
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        const slides = document.querySelectorAll('.slide');
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 2000); // Automatically change slide every 2 seconds
 </script>
 
 </body>
