@@ -3,5 +3,4 @@ HelpDesk is a platform that simplifies student interactions with college departm
 <pre>
 Author :- AMIT KUMAR 
           HARSH RAJ
-          SHASHI RANJAN
 </pre>
